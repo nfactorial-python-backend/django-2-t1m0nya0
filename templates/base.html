@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<ul>
+    <li><a href="{% url 'news:news' %}">News</a></li>
+    <li><a href="{% url 'news:post_news' %}">Post News</a></li>
+</ul>
+{% block content %}
+{% endblock %}
+</body>
+</html>

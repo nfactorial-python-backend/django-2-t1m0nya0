@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}News Update{% endblock %}
+
+
+{% block content %}
+    <h2>News Update</h2>
+    <div style="display: flex; flex-direction: column;width: 50%">
+        <form action="{% url 'news:update' news_db.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Post News{% endblock %}
+
+
+{% block content %}
+    <h1>Post News</h1>
+    <div style="margin-bottom: 100px">
+        <h2>{{ news_db.title }}</h2>
+        <p>{{ news_db.news_content }}</p>
+        <p>{{ news_db.created_at }}</p>
+        <a href="{% url "news:update" news_id=news_db.id %}">Update</a>
+    </div>
+    <h2>Comments</h2>
+     <form method="post" action="{% url 'news:detail' news_db.id %}">
+        {% csrf_token %}
+        <input name="comment" placeholder="Comment place" required>
+        <input type="submit" value="Send">
+    </form>
+    <div style="padding-top: 25px">
+        {% for comment in comments %}
+            <p>{{ comment.comment_content }}</p>
+            <p>{{ comment.created_at }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

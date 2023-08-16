@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}News{% endblock %}
+
+
+{% block content %}
+    <style>
+        table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px solid #ccc;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            td a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+            td a:hover {
+                color: #f00;
+            }
+    </style>
+     <h1>News</h1>
+        <table>
+            {% for news in all_news %}
+                <tr>
+                    <td><a href="{% url 'news:detail' news.id %}">{{ news.title }}</a></td>
+                    <td>{{ news.created_at }}</td>
+                    <td><a href="{% url "news:update" news_id=news.id %}">Update</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock %}
