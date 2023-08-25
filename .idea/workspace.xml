@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b79d19db-9dcc-4150-bf75-606a2067568e" name="Changes" comment="init" />
+    <list default="true" id="b79d19db-9dcc-4150-bf75-606a2067568e" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/news/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}News{% endblock %}
+
+
+{% block content %}
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            color: #f00;
+        }
+    </style>
+    <h1>News</h1>
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>Date</td>
+            <td>Option</td>
+            <td>Created User</td>
+        </tr>
+        {% for news in all_news %}
+            <tr>
+                <td><a href="{% url 'news:detail' news.id %}">{{ news.title }}</a></td>
+                <td>{{ news.created_at }}</td>
+                {% if request.user == news.user %}
+                    <td><a href="{% url "news:update" news_id=news.id %}">Update</a>
+
+                        <form method="POST" action="{% url 'news:delete_news' news.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Delete news</button>
+                        </form>
+                    </td>
+
+                {% else %}
+                    <td>None</td>
+                {% endif %}
+                <td>{{ news.user }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

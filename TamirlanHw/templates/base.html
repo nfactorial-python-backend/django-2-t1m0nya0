@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        ul li {
+            padding-left: 50px;
+            text-decoration: none;
+            list-style-type: none;
+
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex;align-items: center">
+    {% if user.is_authenticated %}<p>current user: <span>{{ user.username }}</span></p>{% endif %}
+    <ul style="display: flex;justify-content: center;align-items: center">
+        <li><a href="{% url 'news:news' %}">News</a></li>
+        {% if user.is_authenticated %}<li><a href="{% url 'news:post_news' %}">Post News</a></li>{% endif %}
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

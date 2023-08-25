@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <form action="{% url 'news:sign_up' %}" method="post">
+       {% csrf_token %}
+
+       {{ form }}
+
+       <p><input type="submit" value="Sign up"></p>
+
+       <p>
+           <a href="/login">Войти</a>
+       </p>
+   </form>
+{% endblock %}
